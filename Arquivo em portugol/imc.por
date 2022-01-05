@@ -1,0 +1,101 @@
+programa
+{
+	inclua biblioteca Matematica --> mat
+	funcao inicio()
+	{
+
+		/* Neste programa, foi criado um código onde o(a) usuário(a) informará:
+		* - Nome
+		* - Peso
+		* - Altura
+		* Com essa informação, ele(a) poderá conferir seu nome, IMC e sua classificação.
+		*/
+
+		escreva("Olá. Eu sou uma calculadora de Índice de massa Corporal (IMC).\n")
+		escreva("Vou pedir apenas algumas informações para dizer qual a classificação você se encontra.\n\n")
+
+		//para coletar o nome do(a) usuário(a), será utilizada a variável cadeia, pois necessitamos que sejam digitados mais de 1 caracter
+		cadeia nome
+		escreva("Primeiro, pode me dizer qual o seu nome? ")
+		leia(nome)
+
+		//será utilizada a variável real, pois o resultado pode apresentar casas decimais após a virgula
+		real p, a, imc, arredondamento
+		escreva("Digite sua altura: ")
+		leia(a)
+		
+		escreva("Digite seu peso: ")
+		leia(p)
+
+		//utilização do "limpa()" para que as informações digitadas sejam apagadas e o programa retorne apenas o resultado.
+		limpa()
+
+		//aqui está a formula para que o programa calcule o IMC do usuário.
+		imc = (p / (a*a))
+		arredondamento = mat.arredondar(imc, 2)
+
+		se(imc < 16.0)
+		{
+		escreva(nome + ", seu IMC é igual a " + arredondamento + ", portanto, sua classificação é Magreza Grau III!\n")
+		//alerta para que procure um médico ou nutricionista para obter orientações
+		escreva("Alerta. Você precisa procurar um profissional para te ajudar a ganhar peso, assim você conseguirá melhorar seu IMC gradativamente, até chegar na classificação adequada.\n")
+		}
+
+		senao se(imc >= 16.0 e imc <= 16.9)
+		{
+		escreva(nome + ", seu IMC é igual a " + arredondamento + ", portanto, sua classificação é Magreza Grau II!\n")
+		escreva("Alerta. Você precisa ganhar peso para chegar na classificação de IMC adequada.\n")
+		}
+
+		senao se(imc >= 17.0 e imc <= 18.4)
+		{
+		escreva(nome + ", seu IMC é igual a " + arredondamento + ", portanto, sua classificação é Magreza Grau I!\n")
+		escreva("Alerta. Você precisa ganhar só um pouco mais de peso para chegar na classificação de IMC adequada.\n")
+		}
+
+		senao se(imc >= 18.5 e imc <= 24.9)
+		{
+		escreva(nome + ", seu IMC é igual a " + arredondamento + ", portanto, sua classificação é Adequado!\n")
+		//incentivo ao usuário(a), para que continue mantendo bons hábitos 
+		escreva("Parabéns. Continue assim, pois seu corpo e sua saúde agradecem :)\n")
+		}
+
+		senao se(imc >= 25.0 e imc <= 29.9)
+		{
+		escreva(nome + ", seu IMC é igual a " + arredondamento + ", portanto, sua classificação é Pré-Obeso!\n")
+		escreva("Alerta. Você precisa perder um pouco de peso para chegar na classificação de IMC adequada.\n")
+		}
+
+		senao se(imc >= 30.0 e imc <= 34.9)
+		{
+		escreva(nome + ", seu IMC é igual a " + arredondamento + ", portanto, sua classificação é Obesidade Grau I!\n")
+		escreva("Alerta. Você precisa perder um pouco mais de peso para chegar na classificação de IMC adequada.\n")
+		}
+
+		senao se(imc >= 35.0 e imc <= 39.9)
+		{
+		escreva(nome + ", seu IMC é igual a " + arredondamento + ", portanto, sua classificação é Obesidade Grau II!\n")
+		escreva("Alerta. Você precisa melhorar sua alimentação e praticar exercícios físicos para perder peso e assim, chegar na classificação de IMC adequada.\n")
+		}
+
+		senao se(imc >= 40)
+		{
+		escreva(nome + ", seu IMC é igual a " + arredondamento + ", portanto, sua classificação é Obesidade Grau III!\n")
+		//alerta para que procure um médico ou nutricionista para obter orientações
+		escreva("Alerta. Você precisa procurar um profissional para te ajudar a perder peso. Assim você conseguirá melhorar seu IMC gradativamente, até chegar na classificação adequada.\n")
+		}
+
+		
+	}
+}
+/* $$$ Portugol Studio $$$ 
+ * 
+ * Esta seção do arquivo guarda informações do Portugol Studio.
+ * Você pode apagá-la se estiver utilizando outro editor.
+ * 
+ * @POSICAO-CURSOR = 90; 
+ * @PONTOS-DE-PARADA = ;
+ * @SIMBOLOS-INSPECIONADOS = ;
+ * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
+ * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
+ */
