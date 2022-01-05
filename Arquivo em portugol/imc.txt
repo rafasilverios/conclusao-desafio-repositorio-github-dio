@@ -1,4 +1,3 @@
-```
 programa
 {
 	inclua biblioteca Matematica --> mat
@@ -85,6 +84,6 @@ programa
 	//alerta para que procure um médico ou nutricionista para obter orientações
 	escreva("Alerta. Você precisa procurar um profissional para te ajudar a perder peso. Assim você conseguirá melhorar seu IMC gradativamente, até chegar na classificação adequada.\n")
 	}
-   }
- }
-```
+    }
+}
+
